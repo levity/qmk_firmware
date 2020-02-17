@@ -30,3 +30,5 @@
 
 // https://beta.docs.qmk.fm/features/feature_advanced_keycodes#tap-hold-configuration-options
 #define RETRO_TAPPING 1
+
+#define OLED_DISABLE_TIMEOUT
