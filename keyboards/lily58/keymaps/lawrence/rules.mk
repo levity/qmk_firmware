@@ -3,5 +3,5 @@ MOUSEKEY_ENABLE = yes
 OLED_DRIVER_ENABLE = yes
 
 SRC += \
-  ./glcdfont.c \
+  ./lib/glcdfont.c \
   ./lib/logo_reader.c
