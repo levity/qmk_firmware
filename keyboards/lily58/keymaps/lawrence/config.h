@@ -28,7 +28,14 @@
 #define MK_W_INTERVAL_1 96
 #define MK_W_INTERVAL_UNMOD 96
 
-// https://beta.docs.qmk.fm/features/feature_advanced_keycodes#tap-hold-configuration-options
-#define RETRO_TAPPING 1
+// https://docs.qmk.fm/#/tap_hold?id=retro-tapping
+// #define RETRO_TAPPING 1
+
+// https://docs.qmk.fm/#/custom_quantum_functions?id=custom-tapping-term
+#define TAPPING_TERM 180
+#define IGNORE_MOD_TAP_INTERRUPT
 
 #define OLED_DISABLE_TIMEOUT
+
+// https://docs.qmk.fm/#/feature_auto_shift
+#define AUTO_SHIFT_TIMEOUT 175
