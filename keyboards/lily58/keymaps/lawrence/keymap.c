@@ -9,6 +9,7 @@
 
 #define MO_FN    MO(_FN)
 #define MO_MEDI  MO(_MEDIA)
+#define MO_NUMP  MO(_NUMPAD)
 #define TG_COLM  TG(_COLMAK)
 #define TG_QWER  TG(_QWERTY)
 #define TG_MOUS  TG(_MOUSE)
@@ -20,6 +21,10 @@
 #define K_RTAB   SGUI(KC_RBRC)
 #define K_SH_BS  RSFT_T(KC_BSLS)
 #define K_SLEEP  RGUI(RALT(KC_PWR))
+#define K_LAPP   LSFT(LGUI(KC_TAB))
+#define K_RAPP   LGUI(KC_TAB)
+#define K_LSCR   LCTL(LSFT(KC_LEFT))
+#define K_RSCR   LCTL(LSFT(KC_RGHT))
 
 #define MT_LSFT  LSFT_T(KC_A)
 #define MT_RSFT  RSFT_T(KC_O)
@@ -39,14 +44,14 @@ KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                   KC_6   ,
 KC_TAB , KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                   KC_J   , KC_L   , KC_U   , KC_Y   , KC_SCLN, KC_MINS, \
 KC_LCTL, MT_LSFT, MT_LALT, KC_S   , KC_T   , KC_G   ,                   KC_H   , KC_N   , KC_E   , MT_RALT, MT_RSFT, KC_QUOT, \
 KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_ESC , KC_BSPC, KC_K   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, K_SH_BS, \
-                           KC_LALT, MO_FN  , KC_LGUI, KC_SPC , KC_ENT , MO_FN  , KC_RGUI, MO_MEDI),
+                           MO_NUMP, MO_FN  , KC_LGUI, KC_SPC , KC_ENT , MO_FN  , KC_RGUI, MO_MEDI),
 
 [_QWERTY] = LAYOUT(\
 KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                   KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_EQL , \
 KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                   KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_MINS, \
 KC_LCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                   KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, \
 KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_ESC , KC_BSPC, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, K_SH_BS, \
-                           KC_LALT, MO_FN  , KC_LGUI, KC_SPC , KC_ENT , MO_FN  , KC_RGUI, MO_MEDI),
+                           MO_NUMP, MO_FN  , KC_LGUI, KC_SPC , KC_ENT , MO_FN  , KC_RGUI, MO_MEDI),
 
 [_NUMPAD] = LAYOUT(\
 _______, ___X___, ___X___, ___X___, ___X___, ___X___,                   KC_PSLS, KC_P7  , KC_P8  , KC_P9  , ___X___, ___X___, \
@@ -64,16 +69,16 @@ _______, _______, _______, _______, _______, _______, TG_MOUS, KC_BTN2, KC_WH_U,
 
 [_MEDIA] = LAYOUT(\
 ___X___, ___X___, ___X___, ___X___, ___X___, ___X___,                   ___X___, ___X___, ___X___, ___X___, KC_BRID, KC_BRIU, \
-___X___, ___X___, ___X___, ___X___, ___X___, ___X___,                   ___X___, ___X___, ___X___, KC_MUTE, KC_VOLD, KC_VOLU, \
 ___X___, ___X___, ___X___, ___X___, ___X___, ___X___,                   ___X___, ___X___, ___X___, KC_MPRV, KC_MPLY, KC_MNXT, \
-___X___, ___X___, ___X___, ___X___, ___X___, ___X___, K_SLEEP, ___X___, ___X___, ___X___, ___X___, ___X___, ___X___, ___X___, \
+___X___, ___X___, ___X___, ___X___, ___X___, ___X___,                   ___X___, K_LSCR , ___X___, K_RSCR , ___X___, ___X___, \
+___X___, ___X___, ___X___, ___X___, ___X___, ___X___, K_SLEEP, ___X___, ___X___, ___X___, ___X___, KC_MUTE, KC_VOLD, KC_VOLU, \
                            ___X___, ___X___, ___X___, ___X___, ___X___, ___X___, ___X___, ___X___),
 
 [_FN] = LAYOUT(\
 _______, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                   KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , \
-_______, _______, KC_LCBR, KC_RCBR, KC_GRV , KC_TILD,                   ___X___, K_BACK , KC_UP  , K_FWD  , ___X___, KC_F12 , \
-_______, _______, KC_LPRN, KC_RPRN, KC_EQL , KC_PLUS,                   ___X___, KC_LEFT, KC_DOWN, KC_RGHT, ___X___, ___X___, \
-_______, _______, KC_LBRC, KC_RBRC, KC_MINS, KC_UNDS, TG_QWER, _______, TG_NUMP, TG_MOUS, K_LTAB , K_RTAB , KC_BSLS, ___X___, \
+_______, _______, KC_LCBR, KC_RCBR, KC_GRV , KC_TILD,                   TG_NUMP, K_BACK , KC_UP  , K_FWD  , ___X___, KC_F12 , \
+_______, _______, KC_LPRN, KC_RPRN, KC_EQL , KC_PLUS,                   KC_WH_D, KC_LEFT, KC_DOWN, KC_RGHT, ___X___, ___X___, \
+_______, _______, KC_LBRC, KC_RBRC, KC_MINS, KC_UNDS, TG_QWER, _______, KC_WH_U, TG_MOUS, K_LTAB , K_RTAB , KC_BSLS, ___X___, \
                            _______, _______, _______, _______, _______, _______, _______, _______),
 };
 
