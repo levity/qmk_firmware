@@ -32,7 +32,7 @@
 // #define RETRO_TAPPING 1
 
 // https://docs.qmk.fm/#/custom_quantum_functions?id=custom-tapping-term
-#define TAPPING_TERM 180
+#define TAPPING_TERM 150
 #define IGNORE_MOD_TAP_INTERRUPT
 
 #define OLED_DISABLE_TIMEOUT
