@@ -38,3 +38,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+
+// lawrence's mods
+// https://docs.qmk.fm/#/custom_quantum_functions?id=custom-tapping-term
+#define TAPPING_TERM 220
+#define IGNORE_MOD_TAP_INTERRUPT
